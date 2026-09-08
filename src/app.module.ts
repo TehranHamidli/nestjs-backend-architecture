@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { PrismaModule } from './prisma/prisma.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -18,6 +19,7 @@ import * as Joi from 'joi';
         JWT_REFRESH_SECRET: Joi.string().required(),
       }),
     }),
+    PrismaModule,
   ],
 })
 export class AppModule {}
